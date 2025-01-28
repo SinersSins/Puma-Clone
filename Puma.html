@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PUMA</title>
+    <script
+      src="https://kit.fontawesome.com/f1303d4da7.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #navbar {
+        display: flex;
+        justify-content: space-between;
+
+        background-color: rgb(56, 55, 55);
+        color: white;
+        font-weight: bold;
+        height: 60px;
+        width: 100%;
+      }
+
+      #left {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        margin-left: 150px;
+      }
+
+      #left > div:hover {
+        cursor: pointer;
+        color: rgb(171, 159, 216);
+      }
+
+      #right {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        margin-right: 0px;
+      }
+
+      #right > div:hover {
+        cursor: pointer;
+      }
+
+      #right > div:first-child {
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      #left > div:first-child > img {
+        width: 40px;
+        align-content: center;
+      }
+
+      #content > div {
+        width: 100%;
+        padding: 2px;
+        height: 500px;
+        background-image: url(https://cdn.sanity.io/images/qa41whrn/prod/787f36894d0ad2b3c07d2ae48ca3f9c9131dc94b-6000x2167.jpg);
+        background-size: cover;
+      }
+
+      #content > div > div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 200px;
+      }
+
+      #content > div > div:nth-child(2) {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+      }
+
+      .discount > h2,
+      p {
+        padding-right: 10px;
+        color: white;
+        font-size: medium;
+      }
+
+      #content > div > div:nth-child(2) > div {
+        margin: 10px;
+        background-color: white;
+        padding: 10px;
+        font-weight: bold;
+        font-size: smaller;
+      }
+
+      #product {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(auto);
+        margin-top: 10px;
+        width: auto;
+        align-items: center;
+        margin: auto;
+        padding: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      #product > div {
+        margin: 30px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      #product > div > img {
+        height: 90%;
+        width: 100%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      .details {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+      
+      }
+
+      .details > div > p {
+        color: red;
+
+      }
+      .details div{
+        padding: 5px;
+      }
+
+      .palermo > div {
+        display: flex;
+        justify-content: center;
+      }
+
+      .palermo > div > p {
+        color: gray;
+      }
+
+      .street {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, auto);
+        height: 450px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+
+      .street > div {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin: 10px;
+        height: 300px;
+      }
+
+      .street > div > div > div {
+        display: flex;
+        justify-content: center;
+      }
+
+      .button {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 10px;
+        align-items: center;
+      }
+
+      .img {
+        width: 100%;
+      }
+
+      @media screen and (min-width: 300px) and (max-width: 500px) {
+        #content > div {
+          width: 100%;
+          height: 200px;
+        }
+        .street {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          height: 250px;
+        }
+        #product {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          height: 100px;
+        }
+        .palermo {
+          font-size: x-small;
+        }
+      }
+
+      #footer {
+        display: flex;
+
+        margin-top: 100px;
+        justify-content: space-evenly;
+        font-weight: bold;
+        background-color: black;
+      }
+
+      #footer > div {
+        padding: 10px;
+        margin: 5px;
+        color: white;
+      }
+
+      #footer > div > div {
+        padding: 10px;
+      }
+
+      #footer > div > div:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar">
+      <div id="left">
+        <div>
+          <img
+            src="data:image/png;base64,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"
+            alt="logo"
+          />
+        </div>
+        <div>New</div>
+        <div>Women</div>
+        <div>Men</div>
+        <div>Kids</div>
+        <div>Motorsport</div>
+        <div>FENTY x PUMA</div>
+        <div>Collaborations</div>
+        <div>Sports</div>
+        <div>Sale</div>
+        <div>Bulk Savings</div>
+      </div>
+      <div id="right">
+        <div>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Search
+        </div>
+        <div><i class="fa-regular fa-heart"></i></div>
+        <div><i class="fa-light fa-cart-shopping"></i></div>
+        <div><i class="fa-regular fa-user"></i></div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div>
+        <div class="discount">
+          <h2>MIN 40% +</h2>
+          <h2>EXTRA 20% OFF</h2>
+          <p>Discount auto-applied at checkout</p>
+        </div>
+        <div>
+          <div>FOR HIM</div>
+          <div>FOR HER</div>
+          <div>FOR KIDS</div>
+        </div>
+      </div>
+    </div>
+    <h2>Puma Spotlight</h2>
+    <div id="product">
+      <div>
+        <img
+          src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395104/02/sv01/fnd/IND/fmt/png/PUMA-Club-5v5-SD-Unisex-Sneakers"
+          alt="shoe1"
+        />
+        <div class="details">
+          <div >
+            <h4>PUMA Club 5v5 SD</h4>
+          </div>
+          <div>
+            <p >Rs. 3,709</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/308419/01/sv01/fnd/IND/fmt/png/Porsche-Legacy-Caven-2.0-Turbo-Unisex-Motorsport-Sneakers"
+          alt=""
+        />
+        <div class="details">
+          <div>
+            <h4>Porsche Legacy</h4>
+          </div>
+          <div>
+            <p>Rs. 4,899</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/392332/07/sv01/fnd/IND/fmt/png/Caven-2.0-VTG-Unisex-Sneakers"
+          alt=""
+        />
+        <div class="details">
+          <div>
+            <h4>PUMA Caven</h4>
+          </div>
+          <div>
+            <p>Rs. 4,709</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/308427/01/sv01/fnd/IND/fmt/png/Mercedes-AMG-Petronas-F1%C2%AE-Speedfusion-OG-Unisex-Motorsport-Sneakers"
+          alt=""
+        />
+        <div class="details">
+          <div>
+            <h4>Merceedes</h4>
+          </div>
+          <div>
+            <p>Rs. 5,709</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/308427/01/sv01/fnd/IND/fmt/png/Mercedes-AMG-Petronas-F1%C2%AE-Speedfusion-OG-Unisex-Motorsport-Sneakers"
+          alt=""
+        />
+        <div class="details">
+          <div>
+            <h4>Merceedes</h4>
+          </div>
+          <div>
+            <p>Rs. 5,709</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palermo">
+      <div>
+        <h1>Palermo Playbook</h1>
+      </div>
+      <div>
+        <p>Style'em your way, everyday</p>
+      </div>
+    </div>
+
+    <div class="street">
+      <div>
+        <div>
+          <img
+            class="img"
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_300,h_300/global/627543/13/mod01/fnd/IND/fmt/png/Football-Nostalgia-Unisex-Relaxed-Fit-Long-Sleeve-Jersey"
+            alt="jersery"
+          />
+        </div>
+        <div>
+          <div>
+            <h2 class="name">StreetWear Staple</h2>
+          </div>
+          <div><button class="button">Shop Now</button></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img
+            class="img"
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_300,h_300/global/626655/33/mod01/fnd/IND/fmt/png/Players-Lane-Men's-Relaxed-Fit-Jersey"
+            alt="nightloks"
+          />
+        </div>
+        <div>
+          <div>
+            <h2 class="name">Night Looks Fab</h2>
+          </div>
+          <div><button class="button">Shop Now</button></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img
+            class="img"
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_300,h_300/global/626718/63/mod01/fnd/IND/fmt/png/MMQ-Men's-Relaxed-Fit-Quarter-Zip-Top"
+            alt="orange"
+          />
+        </div>
+        <div>
+          <div>
+            <h2 class="name">Playful Outings</h2>
+          </div>
+          <div><button class="button">Shop Now</button></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img
+            class="img"
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_300,h_300/global/627873/86/mod01/fnd/IND/fmt/png/CLASSICS-Short-Sleeve-Unisex-Woven-Shirt"
+            alt="jersery"
+          />
+        </div>
+        <div>
+          <div>
+            <h2 class="name">The Festive Edit</h2>
+          </div>
+          <div><button class="button">Shop Now</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div>
+        <p>Support</p>
+        <p>Contact us</p>
+        <p>Promotions</p>
+        <p>Track OrderShoe Care</p>
+      </div>
+      <div>
+        <p>FAQs</p>
+        <p>My Account</p>
+        <p>Privacy</p>
+        <p>Sneakers</p>
+      </div>
+      <div>
+        <p>About</p>
+        <p>Company</p>
+        <p>Careers</p>
+        <p>Investors</p>
+      </div>
+    </div>
+  </body>
+</html>
