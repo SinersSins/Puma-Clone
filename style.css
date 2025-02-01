@@ -1,0 +1,256 @@
+  /* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Navbar */
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(56, 55, 55);
+    color: white;
+    font-weight: bold;
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  #left, #right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  #left > div:hover, #right > div:hover {
+    cursor: pointer;
+    color: rgb(171, 159, 216);
+  }
+
+  #right > div:first-child {
+    border: 1px solid white;
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+
+  #left > div:first-child > img {
+    width: 40px;
+  }
+
+  /* Content Section */
+  #content {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url(https://cdn.sanity.io/images/qa41whrn/prod/787f36894d0ad2b3c07d2ae48ca3f9c9131dc94b-6000x2167.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+  }
+
+  .discount h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .discount p {
+    font-size: 1rem;
+  }
+
+  #content > div:nth-child(2) {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  #content > div:nth-child(2) > div {
+    background-color: white;
+    padding: 10px 20px;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Product Grid */
+  #product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  #product > div {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  #product > div > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .details {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .details h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .details p {
+    color: red;
+    font-size: 0.9rem;
+  }
+
+  /* Palermo Section */
+  .palermo {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .palermo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .palermo p {
+    font-size: 1.2rem;
+    color: gray;
+  }
+
+  /* Streetwear Section */
+  .street {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .street > div {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .street > div > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .street > div > div {
+    padding: 10px;
+  }
+
+  .street h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+
+  /* Footer */
+  #footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 40px;
+  }
+
+  #footer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #footer > div > p {
+    cursor: pointer;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+    }
+
+    #left, #right {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #content {
+      height: 300px;
+    }
+
+    .discount h2 {
+      font-size: 1.5rem;
+    }
+
+    .palermo h1 {
+      font-size: 2rem;
+    }
+
+    .palermo p {
+      font-size: 1rem;
+    }
+
+    #footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #content {
+      height: 200px;
+    }
+
+    .discount h2 {
+      font-size: 1.2rem;
+    }
+
+    .palermo h1 {
+      font-size: 1.5rem;
+    }
+
+    .palermo p {
+      font-size: 0.9rem;
+    }
+
+    #product, .street {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
